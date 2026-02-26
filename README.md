@@ -84,7 +84,7 @@ Sistem ini mengintegrasikan:
   - EAR (Eye Aspect Ratio)
   - MAR (Mouth Aspect Ratio)
 
-Refrensi : Available: https://dx.doi.org/10.21227/e1qm-hb90
+### Refrensi : Yawdd: Yawning detection dataset, Available: https://dx.doi.org/10.21227/e1qm-hb90
 ---
 
 ## 🏗️ Tech Stack
