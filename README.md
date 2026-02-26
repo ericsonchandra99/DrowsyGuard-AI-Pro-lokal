@@ -1,111 +1,232 @@
 # 🛡️ DrowsyGuard AI Pro MAX
-### **Advanced Driver Drowsiness Detection System with Deep Learning**
+### Advanced Driver Drowsiness Detection System with Deep Learning
 
 [![Python Version](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://www.python.org/)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.12+-orange.svg)](https://tensorflow.org/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-Deployment-red.svg)](https://streamlit.io/)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-black.svg)](https://github.com/ericsonchandra99/DrowsyGuard-AI-Pro-lokal.git)
-
-**DrowsyGuard AI Pro MAX** adalah aplikasi monitoring keselamatan berkendara berbasis kecerdasan buatan (AI). Proyek ini menggunakan arsitektur **MobileNetV2** yang dioptimalkan untuk mendeteksi kelelahan pengemudi melalui analisis visual secara *real-time*.
+[![Version](https://img.shields.io/badge/Version-2.5.0--PRO--MAX-success.svg)]()
 
 ---
 
-## 📺 Demo & Riset
-* **Video Demo**: [Tonton di YouTube](https://youtu.be/9yV1miCpnIg)
-* **Dataset**: YawDD (Yawning Detection Dataset)
-* **Metode**: Analisis Temporal EAR (Eye Aspect Ratio) & MAR (Mouth Aspect Ratio)
+## 🎥 Live Demo
+
+<p align="center">
+  <a href="https://youtu.be/9yV1miCpnIg">
+    <img src="https://img.youtube.com/vi/9yV1miCpnIg/maxresdefault.jpg" width="80%">
+  </a>
+</p>
+
+<p align="center">
+  ▶ Click thumbnail above to watch full demo on YouTube
+</p>
 
 ---
 
-## 🚀 Fitur Unggulan
+## 📌 Overview
 
-Sistem ini dirancang dengan antarmuka **Streamlit** yang interaktif dan memiliki 3 modul utama:
+**DrowsyGuard AI Pro MAX** adalah sistem monitoring keselamatan berkendara berbasis **Artificial Intelligence** yang mampu mendeteksi kondisi mengantuk secara **real-time** menggunakan Computer Vision dan Deep Learning.
 
-### 1. 🎥 Live Monitor
-* **Real-time Prediction**: Deteksi wajah langsung melalui webcam.
-* **Buffer Smoothing**: Algoritma untuk menstabilkan prediksi agar tidak terjadi *flickering*.
-* **Audio Alarm**: Peringatan suara otomatis (Windows-compatible) jika skor kantuk melebihi ambang batas.
-* **Live Metrics**: Grafik skor kantuk yang terupdate setiap detik.
+Model menggunakan arsitektur **MobileNetV2 (Transfer Learning)** yang dioptimalkan untuk efisiensi dan akurasi tinggi dalam skenario dunia nyata.
 
-### 2. 🔍 Batch Analysis (Upload Predict)
-* **Image Predictor**: Analisis instan untuk file gambar tunggal.
-* **Video Processor**: Pengolahan file video untuk mendeteksi durasi kantuk di setiap frame secara otomatis.
+Sistem ini mengintegrasikan:
 
-### 3. 📊 History & Evidence Gallery
-* **Auto-Save Evidence**: Mengambil tangkapan layar otomatis saat terdeteksi "Drowsy".
-* **Interactive Gallery**: Melihat kembali bukti-bukti kejadian kantuk sebelumnya.
-* **CSV Reporting**: Ekspor data laporan kejadian ke format `.csv` untuk analisis statistik.
+- 🧠 Deep Learning (TensorFlow / Keras)
+- 🎥 Computer Vision (OpenCV)
+- 🌐 Interactive Web Dashboard (Streamlit)
+- 📊 Real-time Risk Monitoring
+- 📸 Automatic Evidence Capture
+- 📑 CSV Reporting System
 
 ---
 
-## 🧠 Arsitektur Model & Metodologi
+## 🚀 Core Features
 
-Aplikasi ini menggunakan pendekatan **Transfer Learning**:
-* **Base Model**: MobileNetV2 (Pre-trained on ImageNet).
-* **Optimization**: Adam Optimizer (Learning Rate: 0.0001).
-* **Training Strategy**: 
-    * *Offline Augmentation* untuk kondisi cahaya malam (gelap) dan siang (terang).
-    * *Stratified Undersampling* untuk menangani ketidakseimbangan kelas data.
-    * *Temporal Validation* (EAR/MAR) untuk akurasi pendeteksian microsleep.
+### 🎥 1. Live Monitor
+- Real-time webcam prediction
+- Adjustable danger threshold
+- Buffer smoothing (anti flicker)
+- Live risk score chart
+- Automatic alarm trigger (Windows-supported)
+- Evidence auto-capture saat terdeteksi "Drowsy"
 
 ---
 
-## 🛠️ Instalasi
+### 🔍 2. Batch Analysis (Upload Predict)
+- 📷 Image prediction (single frame analysis)
+- 🎞️ Video frame-by-frame processing
+- Progress tracking
+- Risk visualization overlay
 
-Pastikan Anda memiliki Python 3.9+ terinstal, lalu jalankan perintah berikut:
+---
 
-1. **Clone Repository**
-   ```bash
-   git clone [https://github.com/ericsonchandra99/DrowsyGuard-AI-Pro-lokal.git](https://github.com/ericsonchandra99/DrowsyGuard-AI-Pro-lokal.git)
-   cd DrowsyGuard-AI-Pro-lokal
+### 📊 3. History & Evidence Gallery
+- Auto-saved drowsiness evidence
+- Interactive gallery view
+- Download individual images
+- Full report export (.CSV)
+
+---
+
+## 🧠 Model Architecture & Methodology
+
+### 🔹 Base Model
+- **MobileNetV2** (Pre-trained on ImageNet)
+
+### 🔹 Optimization
+- Adam Optimizer  
+- Learning Rate: 0.0001  
+- Input Size: 224x224  
+
+### 🔹 Training Strategy
+- Offline Augmentation (Low-light & daylight simulation)
+- Stratified Undersampling (Class imbalance handling)
+- Temporal Validation:
+  - EAR (Eye Aspect Ratio)
+  - MAR (Mouth Aspect Ratio)
+
+---
+
+## 🏗️ Tech Stack
+
+| Technology | Purpose |
+|------------|----------|
+| Python | Core Programming |
+| TensorFlow / Keras | Deep Learning Model |
+| OpenCV | Frame Processing |
+| Streamlit | Web Application Interface |
+| NumPy | Numerical Computation |
+| Pandas | Data Logging & Reporting |
+| Dlib (Optional) | Facial Landmark Extraction |
+
+---
+
+## 📂 Project Structure
 
 ```
+DrowsyGuard-AI-Pro-MAX/
+│
+├── code_deploy.py          # Main Streamlit Application
+├── drowsy_model.keras      # Deep Learning Model
+├── score.wav               # Alarm Sound
+├── evidence/               # Auto-generated evidence folder
+├── shape_predictor_68.dat  # Dlib Landmark (Optional)
+└── README.md
+```
 
-2. **Install Library**
+---
+
+## ⚙️ Installation Guide
+
+### 1️⃣ Clone Repository
+
 ```bash
-pip install streamlit tensorflow opencv-python pandas numpy dlib
-
+git clone https://github.com/ericsonchandra99/DrowsyGuard-AI-Pro-lokal.git
+cd DrowsyGuard-AI-Pro-lokal
 ```
 
+---
 
-3. **Jalankan Aplikasi**
+### 2️⃣ Create Virtual Environment (Recommended)
+
+```bash
+python -m venv venv
+```
+
+Activate:
+
+Windows:
+```bash
+venv\Scripts\activate
+```
+
+Mac/Linux:
+```bash
+source venv/bin/activate
+```
+
+---
+
+### 3️⃣ Install Dependencies
+
+```bash
+pip install streamlit tensorflow opencv-python pandas numpy pillow dlib
+```
+
+---
+
+### 4️⃣ Run Application
+
 ```bash
 streamlit run code_deploy.py
-
 ```
 
+Access via browser:
 
+```
+http://localhost:8501
+```
+
+---
+
+## 🎯 Use Case Applications
+
+- 🚗 Driver Monitoring System
+- 🏭 Industrial Safety Supervision
+- 🖥️ Focus Monitoring System
+- 📚 Academic Research (Computer Vision)
+- 🤖 AI-based Safety Implementation
+
+---
+
+## 📈 System Workflow
+
+1. Capture frame (webcam / uploaded media)
+2. Preprocessing (Resize + Normalization)
+3. Deep Learning inference
+4. Score smoothing using buffer
+5. Threshold evaluation
+6. If exceeded:
+   - Trigger alarm
+   - Save evidence image
+   - Log report entry
 
 ---
 
 ## 👨‍💻 System Architect
 
-**Ericson Chandra Sihombing**
-*Data Science Student | ITERA '21*
+**Ericson Chandra Sihombing**  
+Data Science Student — Institut Teknologi Sumatera (ITERA)
 
-> **"HAMORAON, HAGABEON, HASANGAPON"**
-> Systematic Thinker | Leadership 📍 Lampung - Jakarta
-
-* **LinkedIn**: [ericsonchandra99](https://www.google.com/search?q=https://www.linkedin.com/in/ericsonchandra99)
-* **Instagram**: [@ericsonchandra99](https://www.google.com/search?q=https://instagram.com/ericsonchandra99)
+> *"HAMORAON, HAGABEON, HASANGAPON"*  
+> Systematic Thinker | Leadership  
+> Lampung – Jakarta
 
 ---
 
-## 📁 Struktur Project
+## 🔮 Future Development
 
-```text
-├── code_deploy.py          # Script utama aplikasi Streamlit
-├── drowsy_model.keras      # Model Deep Learning (H5/Keras)
-├── score.wav               # Sound alarm peringatan
-├── evidence/               # Folder penyimpanan bukti (Auto-generated)
-├── shape_predictor_68...   # File Dlib Landmark (opsional untuk ekstraksi)
-└── README.md
-
-```
+- Hybrid EAR + CNN Fusion Model
+- Cloud Deployment
+- Mobile Integration
+- GPU Acceleration
+- Real-world in-vehicle hardware integration
 
 ---
 
-© 2026 | **DrowsyGuard AI Pro MAX** | 
+## 📜 License
 
-```
+This project is developed for academic research and portfolio purposes.
 
+---
+
+## ⭐ Support & Contribution
+
+If you find this project useful:
+
+- ⭐ Star this repository
+- 🍴 Fork for development
+- 💬 Provide feedback or suggestions
+
+---
+
+# 🛡️ AI for Safety. AI for Humanity.
