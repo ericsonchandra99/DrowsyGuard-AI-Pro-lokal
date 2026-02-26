@@ -1,8 +1,3 @@
-Tentu, Ericson! Ini adalah kode **Markdown** lengkap yang bisa langsung kamu *copy-paste* ke dalam file `README.md` di repositori GitHub kamu.
-
-Saya telah menyesuaikan isinya dengan struktur kode Streamlit yang kamu miliki, termasuk fitur *History Report*, *Batch Prediction*, dan profil profesional kamu sesuai bio yang kamu inginkan.
-
-```markdown
 # 🛡️ DrowsyGuard AI Pro MAX
 ### **Advanced Driver Drowsiness Detection System with Deep Learning**
 
